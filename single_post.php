@@ -22,6 +22,7 @@ if (isset($_GET['post-slug'])) {
             <!-- full post div -->
             <div class="full-post-div">
                 <h2 class="post-title"><?php echo $post['title']; ?></h2>
+                <?php echo "<img src='/static/images/" . $post['image'] .  "' style='width: 100%; height: auto;' class='post_image' alt='Post image'>"; ?>
                 <div class="post-body-div">
                     <p><?php echo $post['body']; ?></p>
                 </div>  

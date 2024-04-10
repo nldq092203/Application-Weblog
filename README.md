@@ -1,2 +1,1 @@
-# -Application-Weblog
-TP Web
+# weblog-v0

@@ -22,7 +22,7 @@ function getPublishedPosts() {
 function getPost($slug)
 {
     global $conn;
-    $query = "SELECT * FROM posts WHERE slug='$slug' AND published=true";
+    $query = "SELECT * FROM posts WHERE slug='$slug'";
     $result = mysqli_query($conn, $query);
     $post = mysqli_fetch_assoc($result);
 

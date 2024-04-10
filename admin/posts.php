@@ -48,18 +48,19 @@ $posts = getAllPosts();
 									<?php echo getPostAuthorById($post['user_id']); ?>
 								</td>
 								<td>
-									<a href="single_post.php?post-slug=<?php echo $post['title'] ?>">
+									<a href="/single_post.php?post-slug=<?php echo $post['slug'] ?>">
+									<?php echo $post['title']?>
 									</a>
 								</td>
 								<td>
 									<?php echo $post["views"] ?>
 								</td>
 								<td>
-									<?php if ($post["published"] == "true") : ?>
+									<?php if ($post["published"] == 1) : ?>
 									<a class="fa fa-check btn unpublish" href="posts.php?unpublish=<?php echo $post['id'] ?>">
 									</a>
 									<?php else: ?>
-									<a class="fa fa-xmark btn unpublish" href="posts.php?publish=<?php echo $post['id'] ?>">
+									<a class="fa fa-close btn publish" href="posts.php?publish=<?php echo $post['id'] ?>">
 									</a>
 									<?php endif; ?>
 
