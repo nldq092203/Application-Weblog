@@ -182,3 +182,19 @@ function updateAdmin($request_values){
         }
     }
 }
+
+function countUsers() {
+    global $conn;
+    $sql = "SELECT COUNT(*) FROM users";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result, MYSQLI_NUM);
+    return $row[0];
+}
+
+function countPosts() {
+    global $conn;
+    $sql = "SELECT COUNT(*) FROM posts";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result, MYSQLI_NUM);
+    return $row[0];
+}

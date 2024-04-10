@@ -22,11 +22,11 @@
 		<h1>Welcome</h1>
 		<div class="stats">
 			<a href="users.php" class="first">
-				<span>43</span> <br>
+				<span><?php echo "Number of users: " . countUsers(); ?></span> <br>
 				<span>Newly registered users</span>
 			</a>
 			<a href="posts.php">
-				<span>43</span> <br>
+				<span><?php echo "Number of posts: " . countPosts(); ?></span> <br>
 				<span>Published posts</span>
 			</a>
 			<a>
