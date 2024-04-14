@@ -29,7 +29,7 @@
 				<span><?php echo "Number of posts: " . countPosts(); ?></span> <br>
 				<span>Published posts</span>
 			</a>
-			<a>
+			<a href="comments.php">
 				<span>43</span> <br>
 				<span>Published comments</span>
 			</a>

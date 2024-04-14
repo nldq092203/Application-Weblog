@@ -315,11 +315,20 @@ form input:focus {
 	min-height: 400px;
 }
 
-.content .post-comments {
+.post-comments {
 	margin-top: 25px;
 	border-radius: 2px;
 	border-top: 1px solid #e4e1e1;
 	padding: 10px;
+}
+
+.comments textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 
 .post-sidebar .card {
@@ -391,3 +400,4 @@ form input:focus {
 	color: white;
 	text-align: center;
 } */
+

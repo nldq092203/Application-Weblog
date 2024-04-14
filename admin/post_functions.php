@@ -18,7 +18,7 @@ function createSlug($string) {
     
     return $string;
 }
-
+$errors = array();
 $post_id = 0;
 $isEditingPost = false;
 $published = 1;
@@ -27,6 +27,8 @@ $post_slug = "";
 $body = "";
 $featured_image = "";
 $post_topic = "";
+
+
 
 if (isset($_POST['update_post'])) {
     updatePost($_POST);
@@ -229,4 +231,5 @@ function togglePublishPost($post_id, $message){
         exit(0);
     }
 }
+
 ?>

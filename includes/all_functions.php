@@ -41,6 +41,15 @@ function getAllTopics()
 
     return $topics;
 }
+function getAllComments()
+{
+    global $conn;
+    $query = "SELECT * FROM comments";
+    $result = mysqli_query($conn, $query);
+    $comments = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $comments;
+}
 
 function getPublishedPostsByTopic($topic_id) {
     global $conn;
@@ -63,5 +72,26 @@ function getTopicName($topic_id) {
     $result = mysqli_query($conn, $query);
     $topic = mysqli_fetch_assoc($result);
     return $topic['name'];
+}
+
+function getUser($user_id) {
+    global $conn;
+    $sql = "SELECT username FROM users WHERE id = $user_id LIMIT 1";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        $user = mysqli_fetch_assoc($result);
+        return $user['username'];
+    } else {
+        return false;
+    }
+}
+
+function fetchComments($post_id) {
+    global $conn;
+    $sql = "SELECT * FROM comments WHERE post_id = " . $post_id . " AND published = 1 ORDER BY created_at DESC";
+    $result = mysqli_query($conn, $sql);
+    $comments = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    return $comments;
 }
 ?>
