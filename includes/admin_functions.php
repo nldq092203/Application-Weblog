@@ -198,3 +198,16 @@ function countPosts() {
     $row = mysqli_fetch_array($result, MYSQLI_NUM);
     return $row[0];
 }
+
+function countComments() {
+    global $conn;
+    $sql = "SELECT COUNT(*) as count FROM comments";
+    $result = mysqli_query($conn, $sql);
+
+    if ($row = mysqli_fetch_assoc($result)) {
+        return $row['count'];
+    } else {
+        echo "Error: " . mysqli_error($conn);
+    }
+}
+?>

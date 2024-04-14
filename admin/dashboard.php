@@ -30,7 +30,7 @@
 				<span>Published posts</span>
 			</a>
 			<a href="comments.php">
-				<span>43</span> <br>
+				<span><?php echo "Number of comments: " . countComments(); ?></span> <br>
 				<span>Published comments</span>
 			</a>
 		</div>
