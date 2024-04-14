@@ -16,6 +16,9 @@ $errors = array();
 if (isset($_POST['update_admin'])) {
     updateAdmin($_POST);
 }
+if (isset($_GET['delete-admin'])) {
+    deleteAdmin($_GET['delete-admin']);
+} 
 // if user clicks the create admin button
 if (isset($_POST['create_admin'])) {
     createAdmin($_POST);
@@ -180,6 +183,19 @@ function updateAdmin($request_values){
         } else {
             array_push($errors, "Failed to update admin user");
         }
+    }
+}
+function deleteAdmin($adminId) {
+    global $conn;
+    $sql = "DELETE FROM users WHERE id=$adminId";
+    if (mysqli_query($conn, $sql)) {
+        $_SESSION['message'] = "Admin successfully deleted";
+        header("location: users.php");
+        exit(0);
+    } else {
+        $_SESSION['message'] = "Failed to delete admin";
+        header("location: users.php");
+        exit(0);
     }
 }
 

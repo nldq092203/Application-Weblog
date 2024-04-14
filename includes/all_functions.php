@@ -94,4 +94,15 @@ function fetchComments($post_id) {
     $comments = mysqli_fetch_all($result, MYSQLI_ASSOC);
     return $comments;
 }
+function countCommentsById($post_id) {
+    global $conn;
+    $sql = "SELECT COUNT(*) as count FROM comments WHERE post_id = $post_id AND published = 1";
+    $result = mysqli_query($conn, $sql);
+
+    if ($row = mysqli_fetch_assoc($result)) {
+        return $row['count'];
+    } else {
+        echo "Error: " . mysqli_error($conn);
+    }
+}
 ?>

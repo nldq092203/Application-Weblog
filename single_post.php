@@ -49,9 +49,10 @@ if (isset($_GET['post-slug'])) {
     </div>
 <!-- // content -->
     <!-- Comment Section -->
+
     <?php if(isset($_SESSION['user']) && $_SESSION['user']['id'] != $post['user_id']): ?>
         <div class="comment">
-            <h3>Comments:</h3>
+            <?php echo "<h3> ".countCommentsById($post['id'])." Comments</h3>"; ?>
             <form method="post" action="<?php echo BASE_URL . 'includes/post_comment.php'; ?>">
                 <textarea name="content" placeholder="Write your comment here..." required></textarea>
                 <input type="hidden" name="post_id" value="<?php echo $post['id']; ?>">
